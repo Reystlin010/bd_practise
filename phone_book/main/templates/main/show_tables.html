@@ -1,0 +1,12 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Вывод информации{% endblock %}
+
+{% block content %}
+<h1>Access to the db</h1>
+
+{% for el in data %}
+    <h3>{{ el.name }}</h3>
+    <h3>{{ el.phone }}</h3><br>
+{% endfor %}
+{% endblock %}

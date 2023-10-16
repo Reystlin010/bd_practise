@@ -1,0 +1,14 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Phone Book{% endblock %}
+
+{% block content %}
+{% if data %}
+    {% for el in data %}
+        <h3>{{ el.name }}</h3>
+        <h3>{{ el.phone }}</h3><br>
+    {% endfor %}
+{% else %}
+    <h1>There are no existing users! <a href="/create">Create one?</a></h1>
+{% endif %}
+{% endblock %}
