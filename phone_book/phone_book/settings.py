@@ -123,7 +123,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [
-    BASE_DIR / "static",
+    BASE_DIR / "/Users/reyst/code/bd_practise/phone_book/main/static",
 ]
 
 # Default primary key field type

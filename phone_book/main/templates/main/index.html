@@ -3,12 +3,13 @@
 {% block title %}Phone Book{% endblock %}
 
 {% block content %}
-{% if data %}
-    {% for el in data %}
-        <h3>{{ el.name }}</h3>
-        <h3>{{ el.phone }}</h3><br>
-    {% endfor %}
-{% else %}
-    <h1>There are no existing users! <a href="/create">Create one?</a></h1>
-{% endif %}
+    {% if data %}
+        {% for el in data %}
+            <h3>
+                <a href="{% url 'update' el.id %}" class="btn btn-primary" >Redact<a>{{ el.name }} - {{ el.phone }}<a href="{% url 'delete' el.id%}" class="btn btn-danger">Delete<a></h3><br>
+        {% endfor %}
+    {% else %}
+        <center><h1>There are no existing users!</h1></center>
+    {% endif %}
+    <center><a href="{% url 'create' %}" class="btn btn-dark">Add user</a><center>
 {% endblock %}

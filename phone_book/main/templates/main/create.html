@@ -1,13 +1,15 @@
 {% extends 'main/layout.html' %}
 
-{% block title %}Форма записи{% endblock %}
+{% block title %}Creation form{% endblock %}
 
 {% block content %}
  <div class="features">
     <center><h1>Create new user</h1></center>
     <form method="post">
-        <input type="text" placeholder="name" class="form-control"><br>
-        <input type="text" placeholder="phone" class="form-control"><br>
+        {% csrf_token %}
+        {{ form.name }}<br>
+        {{ form.phone }}<br>
+        <span>{{ error }}</span>
         <center><button type="submit" class="btn btn-success">Add user</button></center>
     </form>
  </div> 
